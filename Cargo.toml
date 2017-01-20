@@ -1,0 +1,14 @@
+[package]
+name = "msgbox"
+version = "0.1.0"
+authors = ["Jang Ryeol <ryeolj5911@gmail.com>"]
+
+[lib]
+crate-type = ["rlib", "dylib"]
+
+[target.'cfg(target_os = "windows")'.dependencies]
+winapi = "0.2.7"
+user32-sys = "0.2.0"
+
+[target.'cfg(target_os = "linux")'.dependencies]
+gtk = "0.1.1"
