@@ -13,6 +13,10 @@ It supports multi-platform, and maintains separate dependencies per platform, th
 
 I use this library when an error occurs in OpenGL applications with [glium](https://github.com/tomaka/glium).
 
+ - Synchronous Message Modal
+ - Multi-platform (Linux GTK3+ and Windows yet)
+ - Light-weight
+
 ```toml
 [dependencies]
 msgbox = "0.1.0"
