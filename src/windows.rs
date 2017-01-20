@@ -7,15 +7,15 @@ pub fn create(title:&str, content:&str, icon_type:IconType) {
     use std::ffi::CString;
     use std::ptr::null_mut;
     use self::user32::MessageBoxA;
-    use self::winapi::winuser::{MB_OK, MB_ICONINFORMATION, MB_ICONERROR};
+    use self::winapi::winuser::{MB_OK, MB_ICONINFORMATION, MB_ICONERROR, MB_TOPMOST};
 
     let lp_text = CString::new(content).unwrap();
     let lp_caption = CString::new(title).unwrap();
 
     let window_type = match icon_type {
-        IconType::ERROR => MB_OK | MB_ICONERROR,
-        IconType::INFO => MB_OK | MB_ICONINFORMATION,
-        IconType::NONE => MB_OK,
+        IconType::ERROR => MB_OK | MB_ICONERROR | MB_TOPMOST,
+        IconType::INFO => MB_OK | MB_ICONINFORMATION | MB_TOPMOST,
+        IconType::NONE => MB_OK | MB_TOPMOST,
     };
 
     unsafe {
