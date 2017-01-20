@@ -1,6 +1,6 @@
 extern crate gtk;
 use self::gtk::prelude::*;
-use self::gtk::{ButtonsType, DialogFlags, MessageType, MessageDialog, Window};
+use self::gtk::{ButtonsType, DialogFlags, MessageType, MessageDialog};
 
 use icon::IconType;
 
@@ -24,6 +24,14 @@ pub fn create(title:&str, content:&str, icon_type:IconType) {
             ButtonsType::Ok,
             content);
     dialog.set_title(title);
-    dialog.run();
-    dialog.destroy();
+    dialog.set_modal(true);
+    dialog.set_decorated(true);
+    dialog.set_keep_above(true);
+    dialog.show();
+    dialog.connect_response(move |ref dialog, response_id| {
+        dialog.destroy();
+        gtk::main_quit();
+        Inhibit(false);
+    });
+    gtk::main();
 }
