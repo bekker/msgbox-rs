@@ -1,3 +1,6 @@
+mod icon;
+pub use icon::IconType;
+
 #[cfg(target_os = "linux")]
 mod linux;
 #[cfg(target_os = "linux")]
