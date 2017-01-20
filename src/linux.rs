@@ -28,7 +28,7 @@ pub fn create(title:&str, content:&str, icon_type:IconType) {
     dialog.set_decorated(true);
     dialog.set_keep_above(true);
     dialog.show();
-    dialog.connect_response(move |ref dialog, response_id| {
+    dialog.connect_response(move |ref dialog, _| {
         dialog.destroy();
         gtk::main_quit();
         Inhibit(false);
