@@ -14,7 +14,7 @@ It supports multi-platform, and maintains separate dependencies per platform, th
 """
 repository = "https://github.com/bekker/msgbox-rs"
 
-keywords = ["msgbox", "message box", "gui", "gtk"]
+keywords = ["msgbox", "gui", "gtk"]
 license = "MIT"
 
 [lib]
