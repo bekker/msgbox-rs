@@ -2,6 +2,9 @@
 
 [![](http://meritbadge.herokuapp.com/msgbox)](https://crates.io/crates/msgbox)
 
+![Example for windows](examples/hello_world_windows.png?raw=true "Example for windows")
+![Example for Linux](examples/hello_world_linux.png?raw=true "Example for linux")
+
 Simple, cross-platform message box GUI library.
 
 All it does is to show a message box modal with a OK button, which runs synchronously.
