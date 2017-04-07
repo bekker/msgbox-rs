@@ -1,0 +1,12 @@
+[package]
+name = "example"
+version = "0.1.0"
+
+license = "MIT"
+
+[dependencies]
+msgbox = { path = ".." }
+
+[[bin]]
+name = "msgbox-example"
+path = "hello_world.rs"
