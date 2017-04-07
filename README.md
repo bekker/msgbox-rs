@@ -17,7 +17,7 @@ It supports multi-platform, and maintains separate dependencies per platform, th
 I use this library when an error occurs in OpenGL applications with [glium](https://github.com/tomaka/glium).
 
  - Synchronous Message Modal
- - Multi-platform (Linux GTK3+ and Windows so far)
+ - Multi-platform (Linux GTK3+, Windows and OS X so far)
  - Light-weight
 
 ```toml
@@ -28,8 +28,9 @@ msgbox = "0.1.0"
 ## Platform support
 * Linux with GTK 3+ (Tested on Ubuntu Gnome 16.04)
 * Windows (Tested on Windows 8.1)
+* OS X
 
-Planning to support OS X, but I don't have any devices with it. Contributions are welcome.
+As long as [gtk](https://github.com/gtk-rs/gtk) or [winapi](https://github.com/retep998/winapi-rs) library working, any platform with it would work.
 
 ## Dev Requirements
 * libgtk-3-dev for Ubuntu
