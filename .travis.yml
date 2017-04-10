@@ -4,7 +4,7 @@ os:
 
 language: rust
 rust:
-  - 1.16.0
+  - stable
 
 before_install:
   - "if [ ${TRAVIS_OS_NAME} = 'osx' ]; then brew update && brew install cairo gtk+3; fi"
