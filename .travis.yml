@@ -1,8 +1,15 @@
 os:
-   - linux
-   - osx
+  - linux
+  - osx
 
 language: rust
 rust:
-   - 1.16.0
+  - 1.16.0
 
+before_install:
+  - "if [ ${TRAVIS_OS_NAME} = 'osx' ]; then brew update && brew install cairo gtk+3; fi"
+
+addons:
+  apt:
+    packages:
+      - libgtk-3-dev
