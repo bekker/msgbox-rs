@@ -2,6 +2,11 @@
 
 [![](http://meritbadge.herokuapp.com/msgbox)](https://crates.io/crates/msgbox)
 
+| OS | Build Status
+| -- | -----
+| Linux & OSX | [![Build Status](https://travis-ci.org/bekker/msgbox-rs.svg?branch=master)](https://travis-ci.org/bekker/msgbox-rs)
+| Windows |
+
 ![Example for windows](examples/hello_world_windows.png?raw=true "Example for windows")
 ![Example for Linux](examples/hello_world_linux.png?raw=true "Example for linux")
 
@@ -33,9 +38,16 @@ msgbox = "0.1.0"
 As long as [gtk](https://github.com/gtk-rs/gtk) or [winapi](https://github.com/retep998/winapi-rs) library working, any platform with it would work.
 
 ## Dev Requirements
-* libgtk-3-dev for Ubuntu
-* gtk3-devel for CentOS
-* nothing for Windows
+
+### Linux
+* `libgtk-3-dev` for apt
+* `gtk3-devel` for yum
+
+### Windows
+* Windows version compatible with [winapi](https://github.com/retep998/winapi-rs)
+
+### OS X
+* `cairo gtk+3` for brew
 
 ## Usage
 
