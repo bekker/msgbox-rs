@@ -4,7 +4,7 @@
 
 | OS | Build Status
 | -- | -----
-| Linux | [![Build Status](https://travis-ci.org/bekker/msgbox-rs.svg?branch=master)](https://travis-ci.org/bekker/msgbox-rs)
+| Linux & OS X | [![Build Status](https://travis-ci.org/bekker/msgbox-rs.svg?branch=master)](https://travis-ci.org/bekker/msgbox-rs)
 
 
 ```rust
