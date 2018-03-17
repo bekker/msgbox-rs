@@ -1,3 +1,4 @@
+use ::gtk;
 use ::gtk::prelude::*;
 use ::gtk::{ButtonsType, DialogFlags, MessageType, MessageDialog};
 

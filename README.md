@@ -37,7 +37,7 @@ Example use case is to show a modal when an error occurs in OpenGL applications.
 
 ```toml
 [dependencies]
-msgbox = "0.1.0"
+msgbox = "0.1.1"
 ```
 
 ## Platform support
