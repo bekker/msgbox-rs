@@ -1,13 +1,10 @@
-extern crate user32;
-extern crate winapi;
-
 use icon::IconType;
 
 pub fn create(title:&str, content:&str, icon_type:IconType) {
     use std::ffi::CString;
     use std::ptr::null_mut;
-    use self::user32::MessageBoxA;
-    use self::winapi::winuser::{MB_OK, MB_ICONINFORMATION, MB_ICONERROR, MB_SYSTEMMODAL};
+    use ::user32::MessageBoxA;
+    use ::winapi::winuser::{MB_OK, MB_ICONINFORMATION, MB_ICONERROR, MB_SYSTEMMODAL};
 
     let lp_text = CString::new(content).unwrap();
     let lp_caption = CString::new(title).unwrap();

@@ -4,25 +4,35 @@
 
 | OS | Build Status
 | -- | -----
-| Linux & OSX | [![Build Status](https://travis-ci.org/bekker/msgbox-rs.svg?branch=master)](https://travis-ci.org/bekker/msgbox-rs)
-| Windows |
+| Linux | [![Build Status](https://travis-ci.org/bekker/msgbox-rs.svg?branch=master)](https://travis-ci.org/bekker/msgbox-rs)
 
-![Example for windows](examples/hello_world_windows.png?raw=true "Example for windows")
-![Example for Linux](examples/hello_world_linux.png?raw=true "Example for linux")
+
+```rust
+extern crate msgbox;
+
+use msgbox::IconType;
+
+fn main() {
+    msgbox::create("Hello Title", "Hello World!", IconType::INFO);
+}
+```
+
+<img src="examples/hello_world_windows.png?raw=true" width="200px" />
+
+<img src="examples/hello_world_linux.png?raw=true" width="300px" />
+
+<img src="examples/hello_world_macos.png?raw=true" width="600px" />
 
 Simple, cross-platform message box GUI library.
 
-All it does is to show a message box modal with a OK button, which runs synchronously.
-
-All the other jobs stop until the user responds.
-It runs fine with OpenGL windows already open.
+All it does is to show a message box modal with an OK button, which runs synchronously.
 
 It supports multi-platform, and maintains separate dependencies per platform, thus light-weight.
 
-I use this library when an error occurs in OpenGL applications with [glium](https://github.com/tomaka/glium).
+Example use case is to show a modal when an error occurs in OpenGL applications.
 
  - Synchronous Message Modal
- - Multi-platform (Linux GTK3+, Windows and OS X so far)
+ - Multi-platform (Linux GTK3+, Windows and OS X)
  - Light-weight
 
 ```toml
@@ -32,10 +42,8 @@ msgbox = "0.1.0"
 
 ## Platform support
 * Linux with GTK 3+ (Tested on Ubuntu Gnome 16.04)
-* Windows (Tested on Windows 8.1)
-* OS X
-
-As long as [gtk](https://github.com/gtk-rs/gtk) or [winapi](https://github.com/retep998/winapi-rs) library working, any platform with it would work.
+* Windows (Tested on Windows 8.1 and 10)
+* OS X (Tested on MacOS 10.13.3 High Sierra)
 
 ## Dev Requirements
 
@@ -47,18 +55,7 @@ As long as [gtk](https://github.com/gtk-rs/gtk) or [winapi](https://github.com/r
 * Windows version compatible with [winapi](https://github.com/retep998/winapi-rs)
 
 ### OS X
-* `cairo gtk+3` for brew
-
-## Usage
-
-```rust
-extern crate msgbox;
-
-fn main() {
-    msgbox::create("Hello Title", "Hello World!", msgbox::IconType::INFO);
-    msgbox::create("Error", "Error occured at hello_world.rs:5.\nTerminating..", msgbox::IconType::ERROR);
-}
-```
+* Tested on High Sierra 10.13.3, but it should work on 10.3+
 
 ## License
 Distributed under MIT License

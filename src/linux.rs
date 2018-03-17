@@ -1,6 +1,5 @@
-extern crate gtk;
-use self::gtk::prelude::*;
-use self::gtk::{ButtonsType, DialogFlags, MessageType, MessageDialog};
+use ::gtk::prelude::*;
+use ::gtk::{ButtonsType, DialogFlags, MessageType, MessageDialog};
 
 use icon::IconType;
 

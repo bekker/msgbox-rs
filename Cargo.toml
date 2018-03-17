@@ -9,7 +9,7 @@ All the other jobs stop until the user responds. It runs fine with OpenGL window
 It supports multi-platform, and maintains separate dependencies per platform, thus light-weight.
 
  - Synchronous Message Modal
- - Multi-platform (Linux GTK3+, Windows and OSX so far)
+ - Multi-platform (Linux GTK3+, Windows and OSX)
  - Light-weight
 """
 repository = "https://github.com/bekker/msgbox-rs"
@@ -28,4 +28,5 @@ user32-sys = "0.2.0"
 gtk = "0.1.2"
 
 [target.'cfg(target_os = "macos")'.dependencies]
-gtk = "0.1.2"
+cocoa = "0.14.0"
+objc = "0.2"
