@@ -1,11 +1,11 @@
 # msgbox-rs
 
-[![](http://meritbadge.herokuapp.com/msgbox)](https://crates.io/crates/msgbox)
+[![](https://meritbadge.herokuapp.com/msgbox)](https://crates.io/crates/msgbox)
 
-| OS | Build Status
-| -- | -----
-| Linux & OS X | [![Build Status](https://travis-ci.org/bekker/msgbox-rs.svg?branch=master)](https://travis-ci.org/bekker/msgbox-rs)
-| Windows | [![Build status](https://ci.appveyor.com/api/projects/status/mtqq6smkg9lrteoc?svg=true)](https://ci.appveyor.com/project/bekker/msgbox-rs)
+| OS | Build Status |
+| -- | ----- |
+| Linux & OS X | [![Build Status](https://travis-ci.org/bekker/msgbox-rs.svg?branch=master)](https://travis-ci.org/bekker/msgbox-rs) |
+| Windows | [![Build status](https://ci.appveyor.com/api/projects/status/mtqq6smkg9lrteoc?svg=true)](https://ci.appveyor.com/project/bekker/msgbox-rs) |
 
 
 ```rust
@@ -18,11 +18,11 @@ fn main() {
 }
 ```
 
-<img src="examples/hello_world_windows.png?raw=true" width="200px" />
+<img src="examples/hello_world_windows.png" width="200px">
 
-<img src="examples/hello_world_linux.png?raw=true" width="300px" />
+<img src="examples/hello_world_linux.png" width="300px">
 
-<img src="examples/hello_world_macos.png?raw=true" width="600px" />
+<img src="examples/hello_world_macos.png" width="600px">
 
 Simple, cross-platform message box GUI library.
 
