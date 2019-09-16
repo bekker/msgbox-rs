@@ -12,9 +12,9 @@ pub fn create(title:&str, content:&str, icon_type:IconType) {
     }
 
     let message_type = match icon_type {
-        IconType::ERROR => MessageType::Error,
-        IconType::INFO => MessageType::Info,
-        IconType::NONE => MessageType::Other,
+        IconType::Error => MessageType::Error,
+        IconType::Info => MessageType::Info,
+        IconType::None => MessageType::Other,
     };
 
     let dialog = MessageDialog::new(

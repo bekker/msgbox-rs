@@ -1,5 +1,5 @@
 pub enum IconType {
-    ERROR,
-    INFO,
-    NONE
+    Error,
+    Info,
+    None,
 }
