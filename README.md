@@ -14,7 +14,7 @@ extern crate msgbox;
 use msgbox::IconType;
 
 fn main() {
-    msgbox::create("Hello Title", "Hello World!", IconType::INFO);
+    msgbox::create("Hello Title", "Hello World!", IconType::Info);
 }
 ```
 
@@ -38,7 +38,7 @@ Example use case is to show a modal when an error occurs in OpenGL applications.
 
 ```toml
 [dependencies]
-msgbox = "0.1.1"
+msgbox = "0.2.0"
 ```
 
 ## Platform support
