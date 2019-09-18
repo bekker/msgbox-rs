@@ -10,9 +10,9 @@ pub fn create(title:&str, content:&str, icon_type:IconType) {
     let lp_caption: Vec<u16> = title.encode_utf16().chain(once(0)).collect();
 
     let window_type = match icon_type {
-        IconType::ERROR => MB_OK | MB_ICONERROR | MB_SYSTEMMODAL,
-        IconType::INFO => MB_OK | MB_ICONINFORMATION | MB_SYSTEMMODAL,
-        IconType::NONE => MB_OK | MB_SYSTEMMODAL,
+        IconType::Error => MB_OK | MB_ICONERROR | MB_SYSTEMMODAL,
+        IconType::Info => MB_OK | MB_ICONINFORMATION | MB_SYSTEMMODAL,
+        IconType::None => MB_OK | MB_SYSTEMMODAL,
     };
 
     unsafe {
