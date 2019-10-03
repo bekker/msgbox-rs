@@ -1,4 +1,4 @@
-use ::cocoa::base::{id, nil, class};
+use ::cocoa::base::{id, nil};
 use ::cocoa::foundation::NSString;
 
 use icon::IconType;
@@ -27,7 +27,7 @@ pub enum NSAlertStyle {
  */
 pub trait NSAlert: Sized {
     unsafe fn alloc(_: Self) -> id {
-        msg_send![class("NSAlert"), alloc]
+        msg_send![class!(NSAlert), alloc]
     }
 
     unsafe fn init(self) -> id;
