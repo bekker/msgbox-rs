@@ -21,8 +21,7 @@ license = "MIT"
 crate-type = ["rlib", "dylib"]
 
 [target.'cfg(target_os = "windows")'.dependencies]
-winapi = "0.2.8"
-user32-sys = "0.2.0"
+winapi = { version = "0.3.8", features = ["winuser"] }
 
 [target.'cfg(target_os = "linux")'.dependencies]
 gtk = "0.4.1"
