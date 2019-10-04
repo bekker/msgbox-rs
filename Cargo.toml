@@ -1,6 +1,6 @@
 [package]
 name = "msgbox"
-version = "0.2.0"
+version = "0.3.0"
 authors = ["Jang Ryeol <ryeolj5911@gmail.com>"]
 description = """
 Simple, cross-platform message box GUI library.
