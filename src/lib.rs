@@ -33,9 +33,6 @@ pub use macos::*;
  * WinAPI
  */
 #[cfg(target_os = "windows")]
-extern crate user32;
-
-#[cfg(target_os = "windows")]
 extern crate winapi;
 
 #[cfg(target_os = "windows")]

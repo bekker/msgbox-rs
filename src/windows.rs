@@ -1,10 +1,11 @@
 use icon::IconType;
 
-pub fn create(title:&str, content:&str, icon_type:IconType) {
+pub fn create(title: &str, content: &str, icon_type: IconType) {
     use std::iter::once;
     use std::ptr::null_mut;
-    use ::user32::MessageBoxW;
-    use ::winapi::winuser::{MB_OK, MB_ICONINFORMATION, MB_ICONERROR, MB_SYSTEMMODAL};
+    use winapi::um::winuser::{
+        MessageBoxW, MB_ICONERROR, MB_ICONINFORMATION, MB_OK, MB_SYSTEMMODAL,
+    };
 
     let lp_text: Vec<u16> = content.encode_utf16().chain(once(0)).collect();
     let lp_caption: Vec<u16> = title.encode_utf16().chain(once(0)).collect();
@@ -20,7 +21,7 @@ pub fn create(title:&str, content:&str, icon_type:IconType) {
             null_mut(),
             lp_text.as_ptr(),
             lp_caption.as_ptr(),
-            window_type
+            window_type,
         );
     }
 }
