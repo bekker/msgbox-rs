@@ -18,7 +18,6 @@ keywords = ["msgbox", "gui", "gtk"]
 license = "MIT"
 
 [lib]
-crate-type = ["rlib", "dylib"]
 
 [target.'cfg(target_os = "windows")'.dependencies]
 winapi = { version = "0.3.8", features = ["winuser"] }
