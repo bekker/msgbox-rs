@@ -1,6 +1,6 @@
 [package]
 name = "msgbox"
-version = "0.3.0"
+version = "0.4.0"
 authors = ["Jang Ryeol <ryeolj5911@gmail.com>"]
 description = """
 Simple, cross-platform message box GUI library.
@@ -16,8 +16,6 @@ repository = "https://github.com/bekker/msgbox-rs"
 
 keywords = ["msgbox", "gui", "gtk"]
 license = "MIT"
-
-[lib]
 
 [target.'cfg(target_os = "windows")'.dependencies]
 winapi = { version = "0.3.8", features = ["winuser"] }
