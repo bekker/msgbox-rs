@@ -23,6 +23,9 @@ winapi = { version = "0.3.8", features = ["winuser"] }
 [target.'cfg(target_os = "linux")'.dependencies]
 gtk = "0.4.1"
 
+[target.'cfg(target_os = "freebsd")'.dependencies]
+gtk = "0.4.1"
+
 [target.'cfg(target_os = "macos")'.dependencies]
 cocoa = "0.19.0"
 objc = "0.2"
