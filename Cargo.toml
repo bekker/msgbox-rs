@@ -20,10 +20,7 @@ license = "MIT"
 [target.'cfg(target_os = "windows")'.dependencies]
 winapi = { version = "0.3.8", features = ["winuser"] }
 
-[target.'cfg(target_os = "linux")'.dependencies]
-gtk = "0.4.1"
-
-[target.'cfg(target_os = "freebsd")'.dependencies]
+[target.'cfg(any(target_os = "linux", target_os = "dragonfly", target_os = "freebsd", target_os = "netbsd", target_os = "openbsd"))'.dependencies]
 gtk = "0.4.1"
 
 [target.'cfg(target_os = "macos")'.dependencies]
