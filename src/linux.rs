@@ -6,8 +6,7 @@ use icon::IconType;
 
 pub fn create(title:&str, content:&str, icon_type:IconType) {
     if gtk::init().is_err() {
-        println!("Failed to initialize GTK.");
-        println!("{}", content);
+        // TODO: return a result with some error type.
         return;
     }
 
