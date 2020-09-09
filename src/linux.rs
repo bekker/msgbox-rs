@@ -2,12 +2,15 @@ use ::gtk;
 use ::gtk::prelude::*;
 use ::gtk::{ButtonsType, DialogFlags, MessageType, MessageDialog};
 
-use icon::IconType;
+use common::{IconType, MsgBoxCreationError};
 
-pub fn create(title:&str, content:&str, icon_type:IconType) {
+pub fn create<'a>(title:&'a str, content:&'a str, icon_type:IconType) -> std::result::Result<(), MsgBoxCreationError<'a>> {
     if gtk::init().is_err() {
-        // TODO: return a result with some error type.
-        return;
+        return Err(MsgBoxCreationError {
+            title,
+            content,
+            icon_type
+        });
     }
 
     let message_type = match icon_type {
@@ -33,4 +36,6 @@ pub fn create(title:&str, content:&str, icon_type:IconType) {
         Inhibit(false);
     });
     gtk::main();
+
+    Ok(())
 }

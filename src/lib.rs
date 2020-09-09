@@ -1,5 +1,5 @@
-mod icon;
-pub use icon::IconType;
+mod common;
+pub use common::{IconType, MsgBoxCreationError};
 
 /**
  * GTK+3

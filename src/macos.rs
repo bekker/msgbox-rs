@@ -4,7 +4,7 @@
 use cocoa::base::{id, nil};
 use cocoa::foundation::NSString;
 
-use icon::IconType;
+use common::{IconType, MsgBoxCreationError};
 
 /**
  * cocoa-rs doesn't implement NSAlert yet (0.14.0)
@@ -29,7 +29,8 @@ pub static NSModalPannelWindowLevel: i32 = 10;
 
 /**
  * NSAlert
- * https://developer.apple.com/documentation/appkit/nsalert */
+ * https://developer.apple.com/documentation/appkit/nsalert
+ */
 pub trait NSAlert: Sized {
     unsafe fn alloc(_: Self) -> id {
         msg_send![class!(NSAlert), alloc]
@@ -85,7 +86,7 @@ impl NSAlert for id {
     }
 }
 
-pub fn create(title: &str, content: &str, icon_type: IconType) {
+pub fn create<'a>(title: &'a str, content: &'a str, icon_type: IconType) -> std::result::Result<(), MsgBoxCreationError<'a>> {
     let alert_style = match icon_type {
         IconType::Error => NSAlertStyle::critical,
         IconType::Info => NSAlertStyle::informational,
@@ -103,5 +104,8 @@ pub fn create(title: &str, content: &str, icon_type: IconType) {
         // Force the alert to appear on top of any other windows
         alert.setWindowLevel(NSModalPannelWindowLevel);
         alert.runModal();
+
+        // TODO: Find a away to detect that NSAlert.runModal() failed?
+        Ok(())
     }
 }
