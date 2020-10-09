@@ -28,7 +28,7 @@ pub fn create(title: &str, content: &str, icon_type: IconType) -> std::result::R
             lp_caption.as_ptr(),
             window_type,
         ) {
-            0 => Err(MsgBoxError::Create{source: None()}),
+            0 => Err(MsgBoxError::Create{source: None}),
             _ => Ok(())
         }
     }
