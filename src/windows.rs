@@ -6,7 +6,7 @@ use winapi::um::winuser::{
 
 use common::{IconType, MsgBoxError};
 
-pub fn create(title: &str, content: &str, icon_type: IconType) -> std::result::Result<(), MsgBoxCreationError> {
+pub fn create(title: &str, content: &str, icon_type: IconType) -> std::result::Result<(), MsgBoxError> {
 
     let lp_text: Vec<u16> = content.encode_utf16().chain(once(0)).collect();
     let lp_caption: Vec<u16> = title.encode_utf16().chain(once(0)).collect();

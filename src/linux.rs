@@ -10,7 +10,7 @@ pub enum GtkError {
     Init,
 }
 
-pub fn create(title:&str, content:&str, icon_type:IconType) -> std::result::Result<(), MsgBoxCreationError> {
+pub fn create(title:&str, content:&str, icon_type:IconType) -> std::result::Result<(), MsgBoxError> {
     if gtk::init().is_err() {
         return Err(MsgBoxError::Create{source: Some(Box::new(GtkError::Init))})
     }
