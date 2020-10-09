@@ -4,7 +4,7 @@
 use cocoa::base::{id, nil};
 use cocoa::foundation::NSString;
 
-use common::{IconType, MsgBoxCreationError};
+use common::{IconType, MsgBoxError};
 
 /**
  * cocoa-rs doesn't implement NSAlert yet (0.14.0)
@@ -86,7 +86,7 @@ impl NSAlert for id {
     }
 }
 
-pub fn create<'a>(title: &'a str, content: &'a str, icon_type: IconType) -> std::result::Result<(), MsgBoxCreationError<'a>> {
+pub fn create(title: &str, content: &str, icon_type: IconType) -> std::result::Result<(), MsgBoxError> {
     let alert_style = match icon_type {
         IconType::Error => NSAlertStyle::critical,
         IconType::Info => NSAlertStyle::informational,

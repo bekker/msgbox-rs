@@ -1,5 +1,7 @@
+extern crate thiserror;
+
 mod common;
-pub use common::{IconType, MsgBoxCreationError};
+pub use common::{IconType, MsgBoxError};
 
 /**
  * GTK+3
