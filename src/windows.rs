@@ -4,9 +4,9 @@ use winapi::um::winuser::{
     MessageBoxW, MB_ICONERROR, MB_ICONINFORMATION, MB_OK, MB_SYSTEMMODAL,
 };
 
-use common::{IconType, MsgBoxCreationError};
+use common::{IconType, MsgBoxError};
 
-pub fn create<'a>(title: &'a str, content: &'a str, icon_type: IconType) -> std::result::Result<(), MsgBoxCreationError<'a>> {
+pub fn create(title: &str, content: &str, icon_type: IconType) -> std::result::Result<(), MsgBoxError> {
 
     let lp_text: Vec<u16> = content.encode_utf16().chain(once(0)).collect();
     let lp_caption: Vec<u16> = title.encode_utf16().chain(once(0)).collect();
@@ -28,11 +28,7 @@ pub fn create<'a>(title: &'a str, content: &'a str, icon_type: IconType) -> std:
             lp_caption.as_ptr(),
             window_type,
         ) {
-            0 => Err(MsgBoxCreationError {
-                title,
-                content,
-                icon_type
-            }),
+            0 => Err(MsgBoxError::Create{source: None}),
             _ => Ok(())
         }
     }

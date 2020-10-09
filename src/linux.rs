@@ -2,15 +2,17 @@ use ::gtk;
 use ::gtk::prelude::*;
 use ::gtk::{ButtonsType, DialogFlags, MessageType, MessageDialog};
 
-use common::{IconType, MsgBoxCreationError};
+use common::{IconType, MsgBoxError};
 
-pub fn create<'a>(title:&'a str, content:&'a str, icon_type:IconType) -> std::result::Result<(), MsgBoxCreationError<'a>> {
+#[derive(thiserror::Error, Debug)]
+pub enum GtkError {
+    #[error("failed to initialize GTK")]
+    Init,
+}
+
+pub fn create(title:&str, content:&str, icon_type:IconType) -> std::result::Result<(), MsgBoxError> {
     if gtk::init().is_err() {
-        return Err(MsgBoxCreationError {
-            title,
-            content,
-            icon_type
-        });
+        return Err(MsgBoxError::Create{source: Some(Box::new(GtkError::Init))})
     }
 
     let message_type = match icon_type {

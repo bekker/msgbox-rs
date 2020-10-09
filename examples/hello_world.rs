@@ -1,6 +1,7 @@
 extern crate msgbox;
 
 use msgbox::IconType;
+use std::error::Error;
 
 fn main() {
     open_window("Hello Title", "Hello World!", IconType::Info);
@@ -10,7 +11,12 @@ fn main() {
 fn open_window(title: &str, content: &str, icon_type: IconType) {
     match msgbox::create(title, content, icon_type) {
         Ok(()) => (),
-        Err(err) => eprintln!("Failed to open window (type: {}, title: \"{}\", content: \"{}\")",
-            err.icon_type, err.title, err.content),
+        Err(err) => {
+            eprintln!("{} (type: {}, title: \"{}\", content: \"{}\")",
+                err, icon_type, title, content);
+            if err.source().is_some() {
+                eprintln!("cause: {}", err.source().unwrap())
+            }
+        }
     }
 }

@@ -1,19 +1,20 @@
-#[derive(Debug)]
+use std::{fmt, error};
+
+#[derive(Debug, Copy, Clone)]
 pub enum IconType {
     Error,
     Info,
     None,
 }
 
-impl std::fmt::Display for IconType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        std::fmt::Debug::fmt(self, f)
+impl fmt::Display for IconType {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        fmt::Debug::fmt(self, f)
     }
 }
 
-#[derive(Debug)]
-pub struct MsgBoxCreationError<'a> {
-    pub title: &'a str,
-    pub content: &'a str,
-    pub icon_type: IconType,
+#[derive(thiserror::Error, Debug)]
+pub enum MsgBoxError {
+    #[error("failed to create a message box")]
+    Create{#[source] source: Option<Box<dyn error::Error>>},
 }
