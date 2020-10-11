@@ -11,9 +11,7 @@ pub enum GtkError {
 }
 
 pub fn create(title:&str, content:&str, icon_type:IconType) -> std::result::Result<(), MsgBoxError> {
-    if gtk::init().is_err() {
-        return Err(MsgBoxError::Create{source: Some(Box::new(GtkError::Init))})
-    }
+    gtk::init()?;
 
     let message_type = match icon_type {
         IconType::Error => MessageType::Error,

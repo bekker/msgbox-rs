@@ -1,3 +1,4 @@
+extern crate glib;
 extern crate thiserror;
 
 mod common;

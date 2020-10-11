@@ -1,4 +1,5 @@
-use std::{fmt, error};
+use glib::error::BoolError;
+use std::fmt;
 
 #[derive(Debug, Copy, Clone)]
 pub enum IconType {
@@ -16,5 +17,5 @@ impl fmt::Display for IconType {
 #[derive(thiserror::Error, Debug)]
 pub enum MsgBoxError {
     #[error("failed to create a message box")]
-    Create{#[source] source: Option<Box<dyn error::Error>>},
+    Create(#[from] BoolError),
 }
