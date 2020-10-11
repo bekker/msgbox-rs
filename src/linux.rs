@@ -31,7 +31,7 @@ pub fn create(title:&str, content:&str, icon_type:IconType) -> std::result::Resu
     dialog.set_keep_above(true);
     dialog.show();
     dialog.connect_response(move |ref dialog, _| {
-        dialog.destroy();
+        unsafe { dialog.destroy() };
         gtk::main_quit();
         Inhibit(false);
     });
