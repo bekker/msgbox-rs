@@ -1,3 +1,4 @@
+#[cfg(target_family = "unix")]
 extern crate glib;
 extern crate thiserror;
 
