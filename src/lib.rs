@@ -2,7 +2,7 @@
 extern crate glib;
 extern crate thiserror;
 
-mod common;
+pub mod common;
 pub use common::{IconType, MsgBoxError};
 
 /**

@@ -22,5 +22,5 @@ pub enum MsgBoxError {
     Create(#[from] BoolError),
     #[cfg(not(target_family = "unix"))]
     #[error("failed to create a message box")]
-    Create,
+    Create(()),
 }
