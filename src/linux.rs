@@ -1,6 +1,6 @@
-use ::gtk;
-use ::gtk::prelude::*;
-use ::gtk::{ButtonsType, DialogFlags, MessageType, MessageDialog};
+use gtk;
+use gtk::prelude::*;
+use gtk::{ButtonsType, DialogFlags, MessageDialog, MessageType};
 
 use common::{IconType, MsgBoxError};
 
@@ -10,7 +10,11 @@ pub enum GtkError {
     Init,
 }
 
-pub fn create(title:&str, content:&str, icon_type:IconType) -> std::result::Result<(), MsgBoxError> {
+pub fn create(
+    title: &str,
+    content: &str,
+    icon_type: IconType,
+) -> std::result::Result<(), MsgBoxError> {
     gtk::init()?;
 
     let message_type = match icon_type {
@@ -20,11 +24,12 @@ pub fn create(title:&str, content:&str, icon_type:IconType) -> std::result::Resu
     };
 
     let dialog = MessageDialog::new(
-            None::<&gtk::Window>,
-            DialogFlags::empty(),
-            message_type,
-            ButtonsType::Ok,
-            content);
+        None::<&gtk::Window>,
+        DialogFlags::empty(),
+        message_type,
+        ButtonsType::Ok,
+        content,
+    );
     dialog.set_title(title);
     dialog.set_modal(true);
     dialog.set_decorated(true);
