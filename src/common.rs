@@ -1,4 +1,6 @@
-use std::{fmt, error};
+#[cfg(target_family = "unix")]
+use glib::error::BoolError;
+use std::fmt;
 
 #[derive(Debug, Copy, Clone)]
 pub enum IconType {
@@ -15,6 +17,10 @@ impl fmt::Display for IconType {
 
 #[derive(thiserror::Error, Debug)]
 pub enum MsgBoxError {
+    #[cfg(target_family = "unix")]
     #[error("failed to create a message box")]
-    Create{#[source] source: Option<Box<dyn error::Error>>},
+    Create(#[from] BoolError),
+    #[cfg(not(target_family = "unix"))]
+    #[error("failed to create a message box")]
+    Create(()),
 }

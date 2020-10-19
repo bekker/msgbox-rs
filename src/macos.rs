@@ -86,7 +86,11 @@ impl NSAlert for id {
     }
 }
 
-pub fn create(title: &str, content: &str, icon_type: IconType) -> std::result::Result<(), MsgBoxError> {
+pub fn create(
+    title: &str,
+    content: &str,
+    icon_type: IconType,
+) -> std::result::Result<(), MsgBoxError> {
     let alert_style = match icon_type {
         IconType::Error => NSAlertStyle::critical,
         IconType::Info => NSAlertStyle::informational,
