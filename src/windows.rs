@@ -1,6 +1,8 @@
 use std::iter::once;
 use std::ptr::null_mut;
-use winapi::um::winuser::{MessageBoxW, MB_ICONERROR, MB_ICONINFORMATION, MB_OK, MB_SYSTEMMODAL};
+use winapi::um::winuser::{
+    MessageBoxW, MB_DEFAULT_DESKTOP_ONLY, MB_ICONERROR, MB_ICONINFORMATION, MB_OK, MB_SYSTEMMODAL,
+};
 
 use common::{IconType, MsgBoxError};
 
@@ -16,7 +18,7 @@ pub fn create(
         IconType::Error => MB_OK | MB_ICONERROR | MB_SYSTEMMODAL,
         IconType::Info => MB_OK | MB_ICONINFORMATION | MB_SYSTEMMODAL,
         IconType::None => MB_OK | MB_SYSTEMMODAL,
-    };
+    } | MB_DEFAULT_DESKTOP_ONLY;
 
     unsafe {
         /*
