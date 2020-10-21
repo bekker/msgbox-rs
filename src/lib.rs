@@ -1,5 +1,3 @@
-#[cfg(target_family = "unix")]
-extern crate glib;
 extern crate thiserror;
 
 pub mod common;
@@ -16,6 +14,15 @@ pub use common::{IconType, MsgBoxError};
     target_os = "openbsd"
 ))]
 extern crate gtk;
+
+#[cfg(any(
+    target_os = "linux",
+    target_os = "dragonfly",
+    target_os = "freebsd",
+    target_os = "netbsd",
+    target_os = "openbsd"
+))]
+extern crate glib;
 
 #[cfg(any(
     target_os = "linux",

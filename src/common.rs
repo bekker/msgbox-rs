@@ -1,4 +1,10 @@
-#[cfg(target_family = "unix")]
+#[cfg(any(
+    target_os = "linux",
+    target_os = "dragonfly",
+    target_os = "freebsd",
+    target_os = "netbsd",
+    target_os = "openbsd"
+))]
 use glib::error::BoolError;
 use std::fmt;
 
@@ -17,10 +23,22 @@ impl fmt::Display for IconType {
 
 #[derive(thiserror::Error, Debug)]
 pub enum MsgBoxError {
-    #[cfg(target_family = "unix")]
+    #[cfg(any(
+        target_os = "linux",
+        target_os = "dragonfly",
+        target_os = "freebsd",
+        target_os = "netbsd",
+        target_os = "openbsd"
+    ))]
     #[error("failed to create a message box")]
     Create(#[from] BoolError),
-    #[cfg(not(target_family = "unix"))]
+    #[cfg(not(any(
+        target_os = "linux",
+        target_os = "dragonfly",
+        target_os = "freebsd",
+        target_os = "netbsd",
+        target_os = "openbsd"
+    )))]
     #[error("failed to create a message box")]
     Create(()),
 }
