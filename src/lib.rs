@@ -4,42 +4,18 @@ pub mod common;
 pub use common::{IconType, MsgBoxError};
 
 /**
- * GTK+3
+ * GTK+3 (Default)
  */
-#[cfg(any(
-    target_os = "linux",
-    target_os = "dragonfly",
-    target_os = "freebsd",
-    target_os = "netbsd",
-    target_os = "openbsd"
-))]
+#[cfg(not(any(target_os = "windows", target_os = "macos")))]
 extern crate gtk;
 
-#[cfg(any(
-    target_os = "linux",
-    target_os = "dragonfly",
-    target_os = "freebsd",
-    target_os = "netbsd",
-    target_os = "openbsd"
-))]
+#[cfg(not(any(target_os = "windows", target_os = "macos")))]
 extern crate glib;
 
-#[cfg(any(
-    target_os = "linux",
-    target_os = "dragonfly",
-    target_os = "freebsd",
-    target_os = "netbsd",
-    target_os = "openbsd"
-))]
+#[cfg(not(any(target_os = "windows", target_os = "macos")))]
 mod linux;
 
-#[cfg(any(
-    target_os = "linux",
-    target_os = "dragonfly",
-    target_os = "freebsd",
-    target_os = "netbsd",
-    target_os = "openbsd"
-))]
+#[cfg(not(any(target_os = "windows", target_os = "macos")))]
 pub use linux::*;
 
 /**
