@@ -1,7 +1,5 @@
 # msgbox-rs
 
-[![](https://meritbadge.herokuapp.com/msgbox)](https://crates.io/crates/msgbox)
-
 | OS | Build Status |
 | -- | ----- |
 | Linux & OS X | [![Build Status](https://travis-ci.org/bekker/msgbox-rs.svg?branch=master)](https://travis-ci.org/bekker/msgbox-rs) |
@@ -35,11 +33,6 @@ Example use case is to show a modal when an error occurs in OpenGL applications.
  - Synchronous Message Modal
  - Multi-platform (Linux GTK3+, Windows and OS X)
  - Light-weight
-
-```toml
-[dependencies]
-msgbox = "0.6.0"
-```
 
 ## Platform support
 * Linux with GTK 3+ (Tested on Ubuntu Gnome 16.04)
