@@ -2,7 +2,7 @@
 
 | OS | Build Status |
 | -- | ----- |
-| Linux & OS X | [![Build Status](https://travis-ci.org/bekker/msgbox-rs.svg?branch=master)](https://travis-ci.org/bekker/msgbox-rs) |
+| Linux & OS X | [![Build Status](https://travis-ci.com/bekker/msgbox-rs.svg?branch=master)](https://travis-ci.com/bekker/msgbox-rs) |
 | Windows | [![Build status](https://ci.appveyor.com/api/projects/status/mtqq6smkg9lrteoc?svg=true)](https://ci.appveyor.com/project/bekker/msgbox-rs) |
 
 
