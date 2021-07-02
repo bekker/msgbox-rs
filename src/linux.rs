@@ -35,7 +35,7 @@ pub fn create(
     dialog.set_decorated(true);
     dialog.set_keep_above(true);
     dialog.show();
-    dialog.connect_response(move |ref dialog, _| {
+    dialog.connect_response(move |dialog, _| {
         unsafe { dialog.destroy() };
         gtk::main_quit();
         Inhibit(false);
