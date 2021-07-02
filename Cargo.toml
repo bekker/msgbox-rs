@@ -1,17 +1,8 @@
 [package]
 name = "msgbox"
-version = "0.6.0"
+version = "0.6.1"
 authors = ["Jang Ryeol <ryeolj5911@gmail.com>"]
-description = """
-Simple, cross-platform message box GUI library.
-All it does is to show a message box modal with a OK button, which runs synchronously.
-All the other jobs stop until the user responds. It runs fine with OpenGL windows already open.
-It supports multi-platform, and maintains separate dependencies per platform, thus light-weight.
-
- - Synchronous Message Modal
- - Multi-platform (Linux GTK3+, Windows and OSX)
- - Light-weight
-"""
+description = "A multi-platform message box modal with a OK button, which runs synchronously."
 repository = "https://github.com/bekker/msgbox-rs"
 
 keywords = ["msgbox", "gui", "gtk"]
@@ -31,3 +22,4 @@ winapi = { version = "0.3.9", features = ["winuser"] }
 [target.'cfg(target_os = "macos")'.dependencies]
 cocoa = "0.24.0"
 objc = "0.2.7"
+
