@@ -1,6 +1,6 @@
 [package]
 name = "msgbox"
-version = "0.6.1"
+version = "0.7.0"
 authors = ["Jang Ryeol <ryeolj5911@gmail.com>"]
 description = "A multi-platform message box modal with a OK button, which runs synchronously."
 repository = "https://github.com/bekker/msgbox-rs"
