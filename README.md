@@ -1,3 +1,6 @@
+# This repository is archived
+- Please use https://github.com/native-dialog-rs/native-dialog-rs instead.
+
 # msgbox-rs
 
 | OS | Build Status |
